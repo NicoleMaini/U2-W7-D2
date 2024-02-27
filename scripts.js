@@ -58,15 +58,33 @@ removeBtn.onclick = remove;
         ESERCIZIO 2
 --------------------------  */
 
-let count = 0;
-function counterTime() {
-  const counter = document.getElementById("timer");
-  const timer = setInterval(() => {
+const secondStorage = "Second-Timer";
+
+// variabile timer
+const timer = document.getElementById("timer");
+
+let count = sessionStorage.getItem(sessionStorage);
+
+// recupero il valore in memoria
+
+// funzione timer
+function timerStart() {
+  setInterval(() => {
     count++;
-    counter.innerText = count;
+    timer.innerText = count;
+    // salvo il valore in memoria
+    sessionStorage.setItem(sessionStorage, count);
   }, 1000);
 }
 
-counterTime();
+timerStart();
+
+// function timerStart() {
+//   count++;
+//   timer.innerText = count;
+//   // salvo il valore in memoria
+//   sessionStorage.setItem(sessionStorage, count);
+// }
+// setInterval(timerStart(), 1000, );
 
 console.log();
