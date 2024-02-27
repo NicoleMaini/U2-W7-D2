@@ -68,23 +68,14 @@ let count = sessionStorage.getItem(sessionStorage);
 // recupero il valore in memoria
 
 // funzione timer
+
 function timerStart() {
-  setInterval(() => {
-    count++;
-    timer.innerText = count;
-    // salvo il valore in memoria
-    sessionStorage.setItem(sessionStorage, count);
-  }, 1000);
+  count++;
+  timer.innerText = count;
+  // salvo il valore in memoria
+  sessionStorage.setItem(sessionStorage, count);
 }
-
 timerStart();
-
-// function timerStart() {
-//   count++;
-//   timer.innerText = count;
-//   // salvo il valore in memoria
-//   sessionStorage.setItem(sessionStorage, count);
-// }
-// setInterval(timerStart(), 1000, );
+const move = setInterval(timerStart, 1000);
 
 console.log();
